@@ -8,7 +8,7 @@ echo cabecera("Home","./index.css");
     <section class="inicio">
             <p><strong>GG</strong>Lock</p>
             <section class="cuenta">
-                <a href="">Registrarse</a>
+                <a href="app/views/formRegister.php">Registrarse</a>
                 <a href="">Iniciar sesión</a>
             </section>
            

@@ -13,7 +13,7 @@ a {
 
 
 .bg_image {
-    background-image: url("../../img/Fondo_TLOZ.jpg");
+    background-image: url("../../public/img/Fondo_TLOZ.jpg");
     background-color: darkgreen;
     position: absolute;
     height: 100%;

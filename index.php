@@ -17,22 +17,22 @@ echo cabecera("Home","./index.css");
         <p>Consigue tus videojuegos favoritos <br> al mejor precio</p>
         <section class="juegos">
             <article>
-                <img src="img/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="">
+                <img src="public/img/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="">
                 <p>Baldurs Gate</p>
                 <p class="precio">39,99€ <strong>-32%</strong></p>
             </article>
             <article>
-                <img src="img/Poster_BOTW.jpg" alt="">
+                <img src="public/img/Poster_BOTW.jpg" alt="">
                 <p>The Legend Of Zelda</p>
                 <p class="precio">35,99€ <strong>-40%</strong></p>
             </article>
             <article>
-                <img src="img/Poster_SF.webp" alt="">
+                <img src="public/img/Poster_SF.webp" alt="">
                 <p>Starfield</p>
                 <p class="precio">49,99€ <strong>-30%</strong></p>
             </article>
             <article>
-                <img src="img/Poster_ED.jpg" alt="">
+                <img src="public/img/Poster_ED.jpg" alt="">
                 <p>Elden Ring</p>
                 <p class="precio">47,99€ <strong>-20%</strong></p>
             </article>

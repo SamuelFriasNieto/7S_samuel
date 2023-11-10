@@ -9,12 +9,12 @@ echo cabecera("Home","./index.css");
             <p><strong>GG</strong>Lock</p>
             <section class="cuenta">
                 <a href="app/formProcessors/register.php">Registrarse</a>
-                <a href="">Iniciar sesión</a>
+                <a href="app/formProcessors/login.php">Iniciar sesión</a>
             </section>
            
     </section>
     <section class="presentacion">
-        <p>Consigue tus videojuegos favoritos <br> al mejor precio</p>
+        <p>Vende y compra tus videojuegos favoritos <br> al mejor precio</p>
         <section class="juegos">
             <article>
                 <img src="public/img/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="">

@@ -4,7 +4,7 @@
     
     <div class="overlay">
         <div class="register">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <?php  
                     foreach($errores as $error) {
                         echo "<p>$error</p>";
@@ -28,6 +28,11 @@
                     <br>
                     <input type="text" name="fecha" value="<?= isset($fecha)? $fecha : ""; ?>" placeholder="D-M-A">
                 </div>
+                <div>
+                <label for="contraseña">Contraseña</label>
+                    <br>
+                    <input type="text" name="password" value="<?= isset($password)? $password : ""; ?>" placeholder="Introduce una contraseña">
+                </div>
                 <div class="idioma">
                     <label for="idioma">Idioma</label>
                     <div class="opciones_idioma">
@@ -39,7 +44,7 @@
                 <div>
                     <label for="foto">Foto de perfil</label>
                     <br>
-                    <input type="file" name="foto">
+                    <input type="file" name="archivo" id="archivo">
                 </div>
                 <input class="enviar" type="submit" value="Crear Perfil" name="enviar">
 

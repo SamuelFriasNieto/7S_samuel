@@ -1,13 +1,15 @@
-<?php 
-require("../../libs/utils.php");
-echo cabecera("register","../../public/css/register.css");
-?>
+
 
 <main>
     
     <div class="overlay">
         <div class="register">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
+                <?php  
+                    foreach($errores as $error) {
+                        echo "<p>$error</p>";
+                    }
+                ?>
                 <div class="cap">
                 <caption>Date de alta en <span><strong>GG</strong>Lock</span></caption>
                 </div>
@@ -26,6 +28,11 @@ echo cabecera("register","../../public/css/register.css");
                     <br>
                     <input type="text" name="fecha" value="<?= isset($fecha)? $fecha : ""; ?>" placeholder="D-M-A">
                 </div>
+                <div>
+                <label for="contraseña">Contraseña</label>
+                    <br>
+                    <input type="text" name="password" value="<?= isset($password)? $password : ""; ?>" placeholder="Introduce una contraseña">
+                </div>
                 <div class="idioma">
                     <label for="idioma">Idioma</label>
                     <div class="opciones_idioma">
@@ -37,7 +44,7 @@ echo cabecera("register","../../public/css/register.css");
                 <div>
                     <label for="foto">Foto de perfil</label>
                     <br>
-                    <input type="file" name="foto">
+                    <input type="file" name="archivo" id="archivo">
                 </div>
                 <input class="enviar" type="submit" value="Crear Perfil" name="enviar">
 
@@ -62,5 +69,3 @@ echo cabecera("register","../../public/css/register.css");
 
 
 
-
-<?php  echo pie() ?>

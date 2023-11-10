@@ -25,6 +25,7 @@ function cabecera(string $titulo = NULL, string $archivo_css = NULL): string
 
 
 
+
 function pie(): string
 {
     return '        
@@ -138,6 +139,37 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
     return false;
 }
 
+function cPassword (string $string, string $campo, array &$errores) {
+    if($string =="" || strlen($string) < 4) {
+        $errores[$campo] = "Error en el campo $campo";
+        return false;
+    } else return true;
+}
+
+function cEmail(string $text, string $campo, array &$errores)
+{
+    if ((preg_match("/^[a-z0-9.]+@([a-z]+\.)+[a-z]{2,4}$/i", sinTildes($text)))) {
+        return true;
+    } else {
+        $errores[$campo] = "Error en el campo $campo";
+        return false;
+    }
+    
+}
+
+function cFecha(string $date, string $campo, array &$errores)
+{   if(!$date == "") {
+    list($d,$m,$y) = explode("-", $date);
+    if(checkdate($m,$d,$y)) {
+        return true;
+    }
+    }
+    
+    
+    $errores[$campo] = "Error en el campo $campo";
+    return false;
+}
+
 
 function cNum(string $num, string $campo, array &$errores, bool $requerido = TRUE, int $max = PHP_INT_MAX)
 {
@@ -225,8 +257,8 @@ function cFile(string $nombre, array &$errores, array $extensionesValidas, strin
                  Tenemos que buscar un nombre único para guardar el fichero de manera definitiva.
                  Podemos hacerlo de diferentes maneras, en este caso se hace añadiendo microtime() al nombre del fichero si ya existe un archivo guardado con ese nombre.
                  */
-                $nombreArchivo = is_file($directorio . "/" . $nombreArchivo) ? time() . $nombreArchivo : $nombreArchivo;
-                $nombreCompleto = $directorio . "/". $nombreArchivo;
+                $nombreArchivo = is_file($directorio . DIRECTORY_SEPARATOR . $nombreArchivo) ? time() . $nombreArchivo : $nombreArchivo;
+                $nombreCompleto = $directorio . DIRECTORY_SEPARATOR . $nombreArchivo;
                 //Movemos el fichero a la ubicación definitiva.
                 if (move_uploaded_file($directorioTemp, $nombreCompleto)) {
                     //Si todo es correcto devuelve la ruta y nombre del fichero como se ha guardado
@@ -244,4 +276,6 @@ function cFile(string $nombre, array &$errores, array $extensionesValidas, strin
         }
     }
 }
+
+?>
 

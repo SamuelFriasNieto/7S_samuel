@@ -1,6 +1,6 @@
 <?php 
 require("../7S_samuel/libs/utils.php");
-echo cabecera("Home","./index.css");
+echo cabecera("Home","index.css");
 ?>
 
 <main>
@@ -44,6 +44,10 @@ echo cabecera("Home","./index.css");
     
     
 </main>
+<footer class="pie">
+    <p>Todos los derechos reservados</p>
+    <a href="https://github.com/SamuelFriasNieto/7S_samuel" target="_blank">Github : SamuelFriasNieto</a>
+</footer>
     
     
 

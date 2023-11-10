@@ -117,9 +117,19 @@ a {
 }
 
 .pie {
-    background-color: darkolivegreen;
-    
+    background-color: rgb(47, 61, 22);
+    position: absolute;
+    bottom: -5.3rem;
     z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.pie  p, .pie a {
+    color:  rgb(99, 216, 159);
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.526);
 }
 
 

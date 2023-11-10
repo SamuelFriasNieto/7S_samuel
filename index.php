@@ -44,6 +44,10 @@ echo cabecera("Home","./index.css");
     
     
 </main>
+<footer class="pie">
+    <p>Todos los derechos reservados</p>
+    <p><a href="https://github.com/SamuelFriasNieto/7S_samuel" target="_blank">Github : SamuelFriasNieto</a></p>
+</footer>
     
     
 

@@ -27,7 +27,7 @@ a {
     height: 50%;
     display: flex;
     justify-content: center;
-    background-color: rgba(1, 105, 23, 0.436);
+    background-color: rgba(0, 83, 18, 0.436);
     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.468);
     border-radius: 1rem;
     z-index: 10;

@@ -1,13 +1,15 @@
-<?php 
-require("../../libs/utils.php");
-echo cabecera("register","../../public/css/register.css");
-?>
+
 
 <main>
     
     <div class="overlay">
         <div class="register">
             <form action="" method="post">
+                <?php  
+                    foreach($errores as $error) {
+                        echo "<p>$error</p>";
+                    }
+                ?>
                 <div class="cap">
                 <caption>Date de alta en <span><strong>GG</strong>Lock</span></caption>
                 </div>
@@ -62,5 +64,3 @@ echo cabecera("register","../../public/css/register.css");
 
 
 
-
-<?php  echo pie() ?>

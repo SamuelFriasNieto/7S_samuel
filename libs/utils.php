@@ -25,6 +25,7 @@ function cabecera(string $titulo = NULL, string $archivo_css = NULL): string
 
 
 
+
 function pie(): string
 {
     return '        
@@ -138,6 +139,28 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
     return false;
 }
 
+function cEmail(string $text, string $campo, array &$errores)
+{
+    if ((preg_match("/^[a-z0-9.]+@([a-z]+\.)+[a-z]{2,4}$/i", sinTildes($text)))) {
+        return true;
+    } else {
+        $errores[$campo] = "Error en el campo $campo";
+        return false;
+    }
+    
+}
+
+function cFecha(string $date, string $campo, array &$errores)
+{
+    list($d,$m,$y) = explode("-", $date);
+    if(checkdate($m,$d,$y)) {
+        return true;
+    }
+    
+    $errores[$campo] = "Error en el campo $campo";
+    return false;
+}
+
 
 function cNum(string $num, string $campo, array &$errores, bool $requerido = TRUE, int $max = PHP_INT_MAX)
 {
@@ -244,4 +267,6 @@ function cFile(string $nombre, array &$errores, array $extensionesValidas, strin
         }
     }
 }
+
+?>
 

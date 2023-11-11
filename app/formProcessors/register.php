@@ -28,10 +28,8 @@ if(!isset($_REQUEST["enviar"])) {
     cRadio($idioma,"idioma",$errores,$idiomasValidos);
     cPassword($password,"password",$errores);
 
-    if(!empty($errores)) {
-        require("../views/formRegister.php");
-    } else {
-        $file = cFile("archivo",$errores,$extensionesPerm,$dir,$tamanyoMaximo);
+    
+        
         if(!empty($errores)) {
             require("../views/formRegister.php");
         } else {
@@ -47,6 +45,7 @@ if(!isset($_REQUEST["enviar"])) {
                 }
             }
             if(empty($errores)) {
+                $file = cFile("archivo",$errores,$extensionesPerm,$dir,$tamanyoMaximo);
                 fwrite($userTXT,$nombre.";".$correo.";".$fecha.";".$password.";".$idioma.";".$file. PHP_EOL);
                 header("location:../views/userPage.php");
             } else {
@@ -58,7 +57,7 @@ if(!isset($_REQUEST["enviar"])) {
         
     }
     
-    }
+    
 }
 
 ?>

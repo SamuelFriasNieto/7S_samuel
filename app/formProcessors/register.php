@@ -3,7 +3,7 @@ require ("../../libs/utils.php");
 echo cabecera("register","../../public/css/register.css");
 
 $errores = [];
-$dir = "../formProcessors";
+$dir = "../formProcessors/userImg";
 $tamanyoMaximo = 300000;
 $extensionesPerm = ["jpg","png","jpeg"];
 $idiomasValidos = ["Castellano","Ingles","Catalan"];
@@ -35,12 +35,30 @@ if(!isset($_REQUEST["enviar"])) {
         if(!empty($errores)) {
             require("../views/formRegister.php");
         } else {
-            header("location:../views/userPage.php");
-        }
+            $userTXT = fopen("./userFiles/users.txt","r+");
+            while(!feof($userTXT)) {
+               $line = str_replace("\n", "", fgets($userTXT));
+               if ($line != "") {
+                $arrayLine = explode(";", $line);
+
+                    if($arrayLine[1]==$correo) {
+                    $errores["autenticación"] = "El correo introducido ya existe";
+                    } 
+                }
+            }
+            if(empty($errores)) {
+                fwrite($userTXT,$nombre.";".$correo.";".$fecha.";".$password.";".$idioma.";".$file. PHP_EOL);
+                header("location:../views/userPage.php");
+            } else {
+                require("../views/formRegister.php");
+            }
+
+           
+        
         
     }
     
-
+    }
 }
 
 ?>

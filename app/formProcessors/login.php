@@ -35,7 +35,7 @@ if(!isset($_REQUEST["enviar"])) {
             if(!isset($inicio)) {
                 $errores["login"] = "El correo y la contraseña no son correctos";
                 $logLogin = fopen("./userFiles/logLogin.txt", "a+");
-                fwrite($logLogin,$correo.";".$password.";".date("d-m-y",time()));
+                fwrite($logLogin,$correo.";".$password.";".date("d-m-y",time()).PHP_EOL);
                 require("../views/formLogin.php");
             }
 

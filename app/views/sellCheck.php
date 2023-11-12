@@ -1,6 +1,6 @@
 <?php
-require("../../libs/utils.php");
-echo cabecera("GGLock","../../public/css/userPage.css" );
+include("../../libs/utils.php");
+echo cabecera("GGLock","../../public/css/sellCheck.css");
 ?>
 
 <main>
@@ -14,15 +14,10 @@ echo cabecera("GGLock","../../public/css/userPage.css" );
             </nav>
         </header>
         <div class="contenedor_principal">
-            <section class="vender">
-                <h2>Vender Juegos</h2>
-                <p>¿No lo usas? Vendelo y que alguien más disfrute de tus juegos</p>
-                <a href="../formProcessors/sell.php"></a>
-            </section>
-            <section class="comprar">
-                <h2>Comprar Juegos</h2>
-                <p>Encuentra tus videojuegos favoritos al mejor <br> precio</p>
-            </section>
+        <div class="register">
+            <h2 class="correcto">El juego se ha subido correctamente</h2>
+            <a href="userPage.php" class="volver">Volver al inicio</a>
+        </div>
         </div>
         
     </div>
@@ -35,9 +30,7 @@ echo cabecera("GGLock","../../public/css/userPage.css" );
     <p><a href="https://github.com/SamuelFriasNieto/7S_samuel" target="_blank">Github : SamuelFriasNieto</a></p>
 </footer>
 
-<?php echo pie() ?>
-    
-    
+<?php pie() ?>
 
 
 

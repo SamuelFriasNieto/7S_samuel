@@ -182,6 +182,17 @@ function cNum(string $num, string $campo, array &$errores, bool $requerido = TRU
     return false;
 }
 
+function cPrecio(string $num, string $campo, array &$errores, bool $requerido = TRUE, int $max = PHP_INT_MAX)
+{
+    $cuantificador = ($requerido) ? "+" : "*";
+    if ((preg_match("/^[0-9\,\.]" . $cuantificador . "$/", $num)) && ($num <= $max)) {
+
+        return true;
+    }
+    $errores[$campo] = "Error en el campo $campo";
+    return false;
+}
+
 
 function cRadio(string $text, string $campo, array &$errores, array $valores, bool $requerido = TRUE)
 {

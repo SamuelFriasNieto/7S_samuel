@@ -69,6 +69,10 @@ strong {
     align-items: center;
 }
 
+h1 a {
+    color: black;
+}
+
 .register {
     width: 60%;
     height: 80%;

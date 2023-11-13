@@ -11,7 +11,7 @@
                     }
                 ?>
                 <div class="cap">
-                <caption>Date de alta en <span><strong>GG</strong>Lock</span></caption>
+                <caption>Date de alta en <a href="../../index.php"><span><strong>GG</strong>Lock</span></a></caption>
                 </div>
                 <div>
                     <label for="nombre">Nombre</label>
@@ -50,6 +50,7 @@
 
             </form>
         </div>
+        <p class="login"><a href="../formProcessors/login.php">¿Ya tienes una cuenta? Inicia sesión</a></p>
     </div>
     <div class="bg_image"></div>
     

@@ -123,6 +123,15 @@ form input[type="text"]:focus-visible {
     align-items: center;
 }
 
+p.form_register{
+    position: absolute;
+    bottom: 17rem;
+}
+
+.form_register a {
+    color: rgb(48, 227, 140);
+}
+
 .pie {
     background-color: rgb(47, 61, 22);
     position: absolute;

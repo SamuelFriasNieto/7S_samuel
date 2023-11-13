@@ -11,7 +11,7 @@
                     }
                 ?>
                 <div class="cap">
-                <caption>Inicia sesión en <span><strong>GG</strong>Lock</span></caption>
+                <caption>Inicia sesión en <a href="../../index.php"><span><strong>GG</strong>Lock</span></a></caption>
                 </div>
                 <div>
                     <label for="correo">E-mail</label>
@@ -27,6 +27,7 @@
 
             </form>
         </div>
+        <p class="form_register"><a href="../formProcessors/register.php">¿No tienes cuenta? Registrate</a></p>
     </div>
     <div class="bg_image"></div>
     

@@ -140,7 +140,7 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
 }
 
 function cPassword (string $string, string $campo, array &$errores) {
-    if($string =="" || strlen($string) < 4) {
+    if($string =="" || strlen($string) < 4 || preg_match("/;/",$string) == true)  {
         $errores[$campo] = "Error en el campo $campo";
         return false;
     } else return true;

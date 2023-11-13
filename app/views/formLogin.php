@@ -23,7 +23,7 @@
                     <br>
                     <input type="text" name="password" value="<?= isset($password)? $password : ""; ?>" placeholder="Introduce tu contraseña">
                 </div>
-                <input class="enviar" type="submit" value="Crear Perfil" name="enviar">
+                <input class="enviar" type="submit" value="Iniciar Sesión" name="enviar">
 
             </form>
         </div>

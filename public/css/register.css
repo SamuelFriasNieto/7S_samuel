@@ -123,6 +123,15 @@ form input[type="text"]:focus-visible {
     align-items: center;
 }
 
+.login{
+    position: absolute;
+    bottom: 10rem;
+}
+
+.login a {
+    color: rgb(48, 227, 140);
+}
+
 .pie {
     background-color: rgb(47, 61, 22);
     position: absolute;

@@ -14,6 +14,10 @@ if($vidaSesion > $inactividad) {
 echo cabecera("GGLock","../../public/css/sell.css");
 
 $errores = [];
+/*
+    $dir$, catValidas = ["rpg","aaa","metroidvania","hackslash","arcade","roguelike"], $estadosValidos = ["nuevo","usado","arreglar"], 
+$extensionesValidas = ["jpeg","jpg","png"] y $tamanyoMaximo = 3000000; mejor en config.php
+*/
 $dir = "../formProcessors/userImg";
 $juego = "";
 $ubi = "";
@@ -53,6 +57,9 @@ if($_SESSION["acceso"] != 1) {
             if(!empty($errores)) {
                 require("../views/formSell.php");
             } else {
+                /**
+                ** Te faltan las comprobaciones antes de abrir y de escribir en rl fichero
+                **/
                 $services = fopen("./userFiles/services.txt","a+");
                 fwrite($services,$juego.";".$ubi.";".$precio.";".$desc.";".$cat.";".$estado.";".$fotoJuego.PHP_EOL);
                 header("location:../views/sellCheck.php");

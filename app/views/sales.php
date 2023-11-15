@@ -34,6 +34,12 @@ echo cabecera("GGLock","../../public/css/sales.css");
         <div class="contenedor_principal">
             /* Todo el contenido del archivo de servicios se imprime aquí de forma organizada */
             <?php 
+/**
+** Te faltan las comprobaciones para controlaar errores en la lectura de ficheros
+** Tienes que almacenar los datos en un orden de tal manera que controles bien la lectura.
+** Te fallan algunos índies del último elemento.
+**/
+
                 $file = fopen("../formProcessors/userFiles/services.txt","r");
                 while(!feof($file)) {
                     $line = fgets($file);

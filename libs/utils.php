@@ -140,6 +140,9 @@ function cTexto(string $text, string $campo, array &$errores, int $max = 30, int
 }
 
 function cPassword (string $string, string $campo, array &$errores) {
+    /** 
+    ** No se que quieres validar en la contraseña pero la expresión regular no parece estar bien
+    **/
     if($string =="" || strlen($string) < 4 || preg_match("/;/",$string) == true)  {
         $errores[$campo] = "Error en el campo $campo";
         return false;
@@ -148,6 +151,10 @@ function cPassword (string $string, string $campo, array &$errores) {
 
 function cEmail(string $text, string $campo, array &$errores)
 {
+/**
+** Mejor si utilizas filter_var($text, FILTER_VALIDATE_EMAIL) en lugar de la expresión regulaar
+**/
+    
     if ((preg_match("/^[a-z0-9.]+@([a-z]+\.)+[a-z]{2,4}$/i", sinTildes($text)))) {
         return true;
     } else {
@@ -164,12 +171,15 @@ function cFecha(string $date, string $campo, array &$errores)
     if($today["year"]-$y<18) {
         $errores[$campo] = "No puedes registrarte si eres menor de 18 años";
     }
+    /**
+    ** Deberias controlar que el explode te ha dado 3 elementos de la fecha
+    **/
+    
     if(checkdate($m,$d,$y)) {
         return true;
     }
     }
-    
-    
+        
     $errores[$campo] = "Error en el campo $campo";
     return false;
 }

@@ -5,6 +5,14 @@ echo cabecera("register","../../public/css/register.css");
 
 $errores = [];
 $dir = "../formProcessors/userImg";
+
+/*
+**  $tamanyoMaximo = 300000;
+**  $extensionesPerm = ["jpg","png","jpeg"];
+**  $idiomasValidos = ["Castellano","Ingles","Catalan"];
+** Mejor si guardas estas variables en una librería config.php dentro de libs. Así consigues centralizarlo
+*/
+    
 $tamanyoMaximo = 300000;
 $extensionesPerm = ["jpg","png","jpeg"];
 $idiomasValidos = ["Castellano","Ingles","Catalan"];
@@ -37,6 +45,9 @@ if($_SESSION["acceso"]==1) {
             if(!empty($errores)) {
                 require("../views/formRegister.php");
             } else {
+                /*
+                *** Puedes hacer una función que devuelva true si el email existe. Hace que la aplicación sea más modular
+                */
                 $userTXT = fopen("./userFiles/users.txt","r+");
                 while(!feof($userTXT)) {
                    $line = str_replace("\n", "", fgets($userTXT));

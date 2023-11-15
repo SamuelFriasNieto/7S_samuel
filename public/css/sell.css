@@ -37,6 +37,20 @@ header {
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.544);
 }
 
+header img {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: .6rem;
+    right: 33rem;
+    border-radius: 50%;
+}
+
+header p {
+    color: white;
+    font-size: 1.2rem;
+}
+
 nav {
     width: 15%;
     font-weight: 700;

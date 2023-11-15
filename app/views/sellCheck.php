@@ -1,7 +1,22 @@
 <?php
+session_start();
 include("../../libs/utils.php");
 echo cabecera("GGLock","../../public/css/sellCheck.css");
+$inactividad = 600;
+if(isset($_SESSION["timeout"])) {
+    $vidaSesion = time() - $_SESSION["timeout"];
+}
+if($vidaSesion > $inactividad) {
+    session_unset();
+    session_destroy();
+} else {
+    $_SESSION["timeout"] = time();
+}
+if($_SESSION["acceso"] != 1) {
+    header("location:../../index.php");
+} 
 ?>
+
 
 <main>
     
@@ -11,6 +26,7 @@ echo cabecera("GGLock","../../public/css/sellCheck.css");
             <nav>
                 <a href="#">Mi Perfil</a>
                 <a href="../../index.php">Cerrar Sesión</a>
+                <img src="<?= $_SESSION["sFoto"] ?>" alt="">
             </nav>
         </header>
         <div class="contenedor_principal">

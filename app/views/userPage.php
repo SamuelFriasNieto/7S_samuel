@@ -1,5 +1,21 @@
 <?php
+session_start();
 require("../../libs/utils.php");
+$inactividad = 600;
+if(isset($_SESSION["timeout"])) {
+    $vidaSesion = time() - $_SESSION["timeout"];
+}
+if($vidaSesion > $inactividad) {
+    session_unset();
+    session_destroy();
+} else {
+    $_SESSION["timeout"] = time();
+}
+if($_SESSION["acceso"] != 1) {
+    header("location:../../index.php");
+} 
+
+
 echo cabecera("GGLock","../../public/css/userPage.css" );
 ?>
 
@@ -8,10 +24,12 @@ echo cabecera("GGLock","../../public/css/userPage.css" );
     <div class="overlay">
         <header>
             <h1><strong>GG</strong>Lock</h1>
+            <p>Nos alegra verte <?php echo $_SESSION["sNombre"]; ?> </p>
             <nav>
                 <a href="#">Mi Perfil</a>
                 <a href="../../index.php">Cerrar Sesión</a>
             </nav>
+            <img src="<?= $_SESSION["sFoto"] ?>" alt="">
         </header>
         <div class="contenedor_principal">
             <section class="vender">
@@ -22,6 +40,7 @@ echo cabecera("GGLock","../../public/css/userPage.css" );
             <section class="comprar">
                 <h2>Comprar Juegos</h2>
                 <p>Encuentra tus videojuegos favoritos al mejor <br> precio</p>
+                <a href="../views/sales.php"></a>
             </section>
         </div>
         

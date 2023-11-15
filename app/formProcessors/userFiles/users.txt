@@ -1,3 +1,5 @@
 
 samuel;samuel@gmail.com;27-10-2002;samuel123;Castellano;../formProcessors/userImg\attack.jpg
 samuel;samuel02@gmail.com;27-10-02;samuel123;Castellano;../formProcessors/userImg\1699729277attack.jpg
+Nestor;nestor@gmail.com;24-4-1985;nestor123;Castellano;
+Helena;helena@gmail.com;27-10-2002;helena123;Castellano;1

@@ -4,10 +4,12 @@
     
     <div class="overlay">
         <header>
-            <h1><strong>GG</strong>Lock</h1>
+            <h1><a href="../views/userPage.php"><strong>GG</strong>Lock</a></h1>
+            <p>Nos alegra verte <?php echo $_SESSION["sNombre"]; ?> </p>
             <nav>
                 <a href="#">Mi Perfil</a>
                 <a href="../../index.php">Cerrar Sesión</a>
+                <img src="<?= $_SESSION["sFoto"] ?>" alt="">
             </nav>
         </header>
         <div class="errores">

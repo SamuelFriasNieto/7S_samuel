@@ -1,1 +1,3 @@
 Hollow Knight;Valencia;15,60;El juego está en perfecto estado;metroidvania;usado
+Dark Souls;Valencia;27,10;Increible juego maravillso;rpg;nuevo
+Animal Crossing;Valencia;40;Mu chulo;rpg;nuevo;../formProcessors/userImg\1700051403attack.jpg

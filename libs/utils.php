@@ -160,6 +160,10 @@ function cEmail(string $text, string $campo, array &$errores)
 function cFecha(string $date, string $campo, array &$errores)
 {   if(!$date == "") {
     list($d,$m,$y) = explode("-", $date);
+    $today = getdate();
+    if($today["year"]-$y<18) {
+        $errores[$campo] = "No puedes registrarte si eres menor de 18 años";
+    }
     if(checkdate($m,$d,$y)) {
         return true;
     }

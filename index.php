@@ -1,5 +1,8 @@
 <?php 
 require("../7S_samuel/libs/utils.php");
+session_start();
+session_unset();
+session_destroy();
 echo cabecera("Home","./index.css");
 ?>
 

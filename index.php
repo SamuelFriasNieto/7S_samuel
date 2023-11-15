@@ -1,6 +1,10 @@
 <?php 
 require("../7S_samuel/libs/utils.php");
 session_start();
+/*
+** Si haces session_unset y session_destroy destruyes la sesión que has creado.
+** En todo caso mejor redirigir si el usuario ya está logueado
+*/
 session_unset();
 session_destroy();
 echo cabecera("Home","./index.css");
@@ -16,6 +20,11 @@ echo cabecera("Home","./index.css");
             </section>
            
     </section>
+    
+    <!--Tienes que mostrar los servicios dinámicamente
+    --- En esta ase del ejercicio tenías que mostrar los títulos de los servicios que tienes almacenados en el fichero
+    -->
+    
     <section class="presentacion">
         <p>Vende y compra tus videojuegos favoritos <br> al mejor precio</p>
         <section class="juegos">

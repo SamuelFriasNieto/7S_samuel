@@ -32,6 +32,7 @@ echo cabecera("GGLock","../../public/css/sales.css");
             </nav>
         </header>
         <div class="contenedor_principal">
+            /* Todo el contenido del archivo de servicios se imprime aquí de forma organizada */
             <?php 
                 $file = fopen("../formProcessors/userFiles/services.txt","r");
                 while(!feof($file)) {

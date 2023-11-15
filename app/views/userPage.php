@@ -8,9 +8,14 @@ if(isset($_SESSION["timeout"])) {
 if($vidaSesion > $inactividad) {
     session_unset();
     session_destroy();
+        
 } else {
     $_SESSION["timeout"] = time();
 }
+/**
+    ** El código de arriba puedes implementarlo en una función ya que lo tendrás que repetir en todas las páginas privadas.
+    ** Una vez cerrada la ssesión puedes redirigir al usuario a index.php, por ejemplo
+    **/
 if($_SESSION["acceso"] != 1) {
     header("location:../../index.php");
 } 
@@ -29,6 +34,12 @@ echo cabecera("GGLock","../../public/css/userPage.css" );
                 <a href="#">Mi Perfil</a>
                 <a href="../../index.php">Cerrar Sesión</a>
             </nav>
+<!-- 
+-- Cuando llegas aquí desde register.php no has almaenado la imagen en $_SESSION por eso no muestra la imagen
+-- Cuando te logueas desde login si la guardas- 
+-- En esta página tenías que mostrar los datos de los servicios que tienes guardados en el fichero de texto.
+-->
+            
             <img src="<?= $_SESSION["sFoto"] ?>" alt="">
         </header>
         <div class="contenedor_principal">
